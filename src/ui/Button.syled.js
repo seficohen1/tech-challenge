@@ -13,4 +13,14 @@ const NavButton = styled(ButtonStyled)`
   border: ${({ login }) => login && '1px solid var(--secondary)'};
 `;
 
-export { ButtonStyled, NavButton };
+const SubmitButton = styled.button`
+  width: 30%;
+  padding: 0.7rem;
+  background-color: var(--secondary);
+  border-radius: 0.7rem;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+`;
+
+export { ButtonStyled, NavButton, SubmitButton };
