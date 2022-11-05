@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const InputText = styled.input`
   display: block;
+  margin-bottom: 0.4rem;
   width: 80%;
   padding: 0.4rem;
   margin-top: 0.4rem;
