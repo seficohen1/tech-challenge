@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Navbar } from '../components/Navbar';
 import { FeaturedContentPage } from '../pages/FeaturedContentPage';
 import { PreviewFilePage } from '../pages/PreviewFilePage';
 import { UploadPage } from '../pages/Upload';

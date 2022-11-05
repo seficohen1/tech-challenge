@@ -15,7 +15,8 @@ const NavButton = styled(ButtonStyled)`
 
 const SubmitButton = styled.button`
   width: 30%;
-  padding: 0.7rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
   background-color: var(--secondary);
   border-radius: 0.7rem;
   text-align: center;
