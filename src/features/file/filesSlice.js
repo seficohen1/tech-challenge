@@ -1,8 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  allFiles: [],
-  selectedFile: {},
+  id: '',
+  fileUrl: '',
+  title: '',
+  tag: '',
+  user: {},
 };
 
 const filesSlice = createSlice({
@@ -15,14 +18,17 @@ const filesSlice = createSlice({
       },
     },
     setSelectedFile: {
-      reducer(state, { payload }) {
+      reducer(state, action) {
+        return { ...state, ...action.payload };
+      },
+      prepare({ id, fileUrl, title, tag, user }) {
         return {
-          ...state,
-          selectedFile: {
-            fileUrl: payload.fileUrl,
-            title: payload.title,
-            tag: payload.tag,
-            user: payload.user,
+          payload: {
+            id,
+            fileUrl,
+            title,
+            tag,
+            user,
           },
         };
       },
@@ -30,7 +36,6 @@ const filesSlice = createSlice({
   },
 });
 
-export const selectAllFiles = (state) => state.files.allFiles;
-export const selectCurrentFile = (state) => state.files.selectedFile;
+export const selectCurrentFile = (state) => state.files;
 export const { getAllFiles, setSelectedFile } = filesSlice.actions;
 export default filesSlice.reducer;
