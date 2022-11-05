@@ -4,7 +4,7 @@ const SearchBarStyled = styled.div`
   display: flex;
   margin-bottom: 1rem;
   justify-content: center;
-  border: 1px solid blue;
+
   padding: 1.1rem;
   background-color: var(--secondary);
 

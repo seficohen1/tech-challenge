@@ -16,7 +16,6 @@ const Grid = styled.section`
 const Item = styled.article`
   img {
     width: 98%;
-    border: 2px solid blue;
   }
 `;
 

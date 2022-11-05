@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const NavbarSyled = styled.nav`
   display: flex;
   justify-content: space-between;
-  border: 1px black solid;
+
   padding: 0.8rem;
 
   img {

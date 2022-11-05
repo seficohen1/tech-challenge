@@ -45,6 +45,9 @@ export const apiSlice = createApi({
       }),
       invalidatesTags: ['files'],
     }),
+    getSearchResults: builder.query({
+      query: (query) => `/search?query=${query}`,
+    }),
   }),
 });
 
@@ -53,6 +56,7 @@ export const {
   useUploadFileMutation,
   useGetCurrentUserQuery,
   useSearchMutation,
+  useGetSearchResultsQuery,
 } = apiSlice;
 
 export default apiSlice;

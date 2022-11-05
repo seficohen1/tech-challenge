@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const UploadCard = styled.div`
-  border: 1px solid red;
   height: 500px;
   width: 100%;
   box-shadow: 0px -1px 69px -36px var(--secondary);
