@@ -1,30 +1,31 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { NavbarStyled } from '../../ui';
 import { NavButton } from '../../ui';
 import { useSelector, useDispatch } from 'react-redux';
-import { login, logout, userLoggedIn } from '../../features/auth/authSlice';
+import { selectCurrentUser, login } from '../../features/auth/authSlice';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const dispatch = useDispatch();
 
+  const { isLoggedIn } = useSelector(selectCurrentUser);
+
   const handleLogin = (e) => {
-    if (e.target.innerText === 'Login') {
-      dispatch(userLoggedIn({ username: 'sefi', isLoggedIn: true }));
-    } else {
-      dispatch(userLoggedIn({ username: '', isLoggedIn: '' }));
-    }
+    dispatch(login());
   };
 
   return (
     <NavbarStyled>
-      <img
-        src="https://res.cloudinary.com/dio4xgjq5/image/upload/v1667498130/15d025c47a884a4a9b62faada057de82_ptr4tm.png"
-        alt="logo"
-      />
+      <Link to="/">
+        <img
+          src="https://res.cloudinary.com/dio4xgjq5/image/upload/v1667498130/15d025c47a884a4a9b62faada057de82_ptr4tm.png"
+          alt="logo"
+        />
+      </Link>
       <div className="nav-btns">
-        <NavButton>Upload</NavButton>
-
+        <Link to="/upload">
+          <NavButton>Upload</NavButton>
+        </Link>
         {!isLoggedIn ? (
           <NavButton onClick={handleLogin} login>
             Login

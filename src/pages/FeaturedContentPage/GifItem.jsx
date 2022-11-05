@@ -1,13 +1,21 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { setSelectedFile } from '../../features/file/filesSlice';
 import { Item } from '../../ui';
 
-const GifItem = () => {
+const GifItem = ({ id, fileUrl, tag, user, title }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    dispatch(setSelectedFile({ id, fileUrl, tag, user, title }));
+    navigate('/preview');
+  };
+
   return (
-    <Item>
-      <img
-        src="https://images.generated.photos/woIHe-qdHKha5rCtX5VVAfhKcVkAq70Nfc549JOb5WA/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MTY2NTc5LmpwZw.jpg"
-        alt=""
-      />
+    <Item onClick={handleClick}>
+      <img src={fileUrl} alt="" />
     </Item>
   );
 };
